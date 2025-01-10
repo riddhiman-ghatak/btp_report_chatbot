@@ -114,7 +114,7 @@ def create_resume_analyzer():
 #     return response.choices[0].message.content
 
 def get_chatbot_response(context, user_query):
-    """Get response from chatbot using the persistent client"""
+    # """Get response from chatbot using the persistent client"""
     messages = [
         {
             "role": "system",
@@ -209,34 +209,52 @@ if uploaded_file is not None:
 # Display analysis results if available
 if st.session_state.analysis_results:
     st.header("Resume Analysis Results")
-    col1, col2, col3, col4 = st.columns(4)
     
+    # First row
+    col1, col2 = st.columns(2)
     with col1:
-        st.metric("Work Experience", "✅" if st.session_state.analysis_results["has_experience"] == "yes" else "❌")
+        st.write("Work Experience")
     with col2:
-        st.metric("2+ Years Experience", "✅" if st.session_state.analysis_results["has_2_years_experience"] == "yes" else "❌")
-    with col3:
-        st.metric("IIT Graduate", "✅" if st.session_state.analysis_results["is_iitian"] == "yes" else "❌")
-    with col4:
-        st.metric("Deep Learning Projects", "✅" if st.session_state.analysis_results["has_deep_learning_project"] == "yes" else "❌")
-
-#Chat interface
-if st.session_state.extracted_text:
-    st.header("Chat with Resume")
-    user_question = st.text_input("Ask a question about the resume:")
+        st.write("✅" if st.session_state.analysis_results["has_experience"] == "yes" else "❌")
     
-    if st.button("Send"):
-        with st.spinner("Generating response..."):
-            response = get_chatbot_response(st.session_state.extracted_text, user_question)
-            st.session_state.chat_history.append(("You", user_question))
-            st.session_state.chat_history.append(("Bot", response))
+    # Second row
+    col3, col4 = st.columns(2)
+    with col3:
+        st.write("Deep Learning Projects")
+    with col4:
+        st.write("✅" if st.session_state.analysis_results["has_deep_learning_project"] == "yes" else "❌")
+    
+    # Third row
+    col5, col6 = st.columns(2)
+    with col5:
+        st.write("IIT Graduate")
+    with col6:
+        st.write("✅" if st.session_state.analysis_results["is_iitian"] == "yes" else "❌")
+    
+    # Fourth row
+    col7, col8 = st.columns(2)
+    with col7:
+        st.write("2+ Years Experience")
+    with col8:
+        st.write("✅" if st.session_state.analysis_results["has_2_years_experience"] == "yes" else "❌")
 
-    # Display chat history
-    for role, message in st.session_state.chat_history:
-        if role == "You":
-            st.write(f"**You:** {message}")
-        else:
-            st.write(f"**Bot:** {message}")
+# #Chat interface
+# if st.session_state.extracted_text:
+#     st.header("Chat with Resume")
+#     user_question = st.text_input("Ask a question about the resume:")
+    
+#     if st.button("Send"):
+#         with st.spinner("Generating response..."):
+#             response = get_chatbot_response(st.session_state.extracted_text, user_question)
+#             st.session_state.chat_history.append(("You", user_question))
+#             st.session_state.chat_history.append(("Bot", response))
+
+#     # Display chat history
+#     for role, message in st.session_state.chat_history:
+#         if role == "You":
+#             st.write(f"**You:** {message}")
+#         else:
+#             st.write(f"**Bot:** {message}")
 
 # [Previous imports and functions remain the same]
 

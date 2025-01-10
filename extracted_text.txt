@@ -21,42 +21,48 @@ linkedin.com/shubham
 **EXPERIENCE**
 
 * **Translead Medtech**
-    * Web Development Intern
-        * Developed responsive UI using React, CSS, and JavaScript, ensuring dynamic rendering and interactive features.
-        * Implemented UI components like navigation bars and modals using Framer Motion and Material-UI.
-        * Optimized front-end performance by minifying JavaScript and CSS, implementing lazy loading with React.lazy().
-    * Jul. 2023, Remote
+    * *Web Development Intern*
+    * Developed responsive UI using React, CSS, and JavaScript, ensuring dynamic rendering and interactive features.
+    * Implemented UI components like navigation bars and modals using Framer Motion and Material-UI.
+    * Optimized front-end performance by minifying JavaScript and CSS, implementing lazy loading with React.lazy().
+    * *Jul. 2023*
+    * *Remote*
 
 
 **PROJECTS**
 
 * **CampusWay**
-    * Personal Project
-        * Developed a campus navigation system using a Flask-hosted Python API to visualize the shortest paths between intersections.
-        * Integrated a React frontend to visualize and display the shortest paths, enhancing user interaction and experience.
-        * Designed a weighted undirected graph and implemented Dijkstra's Algorithm, optimizing travel time by 12%.
-    * Feb. 2024, bit.ly/cw-github
+    * *Personal Project*
+    * Developed a campus navigation system using a Flask-hosted Python API to visualize the shortest paths between intersections.
+    * Integrated a React frontend to visualize and display the shortest paths, enhancing user interaction and experience.
+    * Designed a weighted undirected graph and implemented Dijkstra's Algorithm, optimizing travel time by time by 12%.
+    * *Feb. 2024*
+    * *bit.ly/cw-github*
 
 * **Xpenses**
-    * Personal Project
-        * Developed a MERN stack expense tracking app with MongoDB Atlas, incorporating financial tracking and data visualization.
-        * Integrated custom Bar Charts that enhanced data visualization capabilities for financial reporting.
-        * Implemented a yearly filter using the useState Hook, allowing users to manage and display their expenses by year efficiently.
-    * Jun. 2024, bit.ly/xp-github
+    * *Personal Project*
+    * Developed a MERN stack expense tracking app with MongoDB Atlas, incorporating financial tracking and data visualization.
+    * Integrated custom Bar Charts that enhanced data visualization capabilities for financial reporting.
+    * Implemented a yearly filter using the useState Hook, allowing users to manage and display their expenses by year efficiently.
+    * *Jun. 2024*
+    * *bit.ly/xp-github*
 
 * **Whiteboard**
-    * Group Project
-        * Developed a robust whiteboard application leveraging React Hooks, JavaScript, and Tailwind CSS.
-        * Incorporated tools for drawing, erasing, and creating shapes, including pencils and erasers to enhance user functionality.
-        * Incorporated features that reduced onboarding time for new users, making the platform more accessible to teams.
-    * Jul. 2024, bit.ly/wbd-github
+    * *Group Project*
+    * Developed a robust whiteboard application leveraging React Hooks, JavaScript, and Tailwind CSS.
+    * Incorporated tools for drawing, erasing, and creating shapes, including pencils and erasers to enhance user functionality.
+    * Incorporated features that reduced onboarding time for new users, making the platform more accessible to teams.
+    * *Jul. 2024*
+    * *bit.ly/wbd-github*
 
 * **Google Meet Clone**
-    * Group Project, Coding Club, IITG
-        * Built a web-based video-conferencing application that closely replicates the core functionalities of Google Meet.
-        * Implemented core features using modern web technologies like WebRTC, CSS, JavaScript, and Express js.
-        * Added key features including user authentication, hand raise, file sharing, and meeting time management.
-    * Dec. 2023, bit.ly/gmc-github
+    * *Group Project, Coding Club, IITG*
+    * Built a web-based video-conferencing application that closely replicates the core functionalities of Google Meet.
+    * Implemented core features using modern web technologies like WebRTC, CSS, JavaScript, and Express js.
+    * Added key features including user authentication, hand raise, file sharing, and meeting time management.
+    * *Dec. 2023*
+    * *bit.ly/gmc-github*
+
 
 **ACHIEVEMENTS**
 
@@ -85,18 +91,19 @@ linkedin.com/shubham
 
 **POSITIONS OF RESPONSIBILITY**
 
-* **Security Head, Spirit - IIT Guwahati**
+* Security Head, Spirit - IIT Guwahati
     * Led a team of 60+ freshers and sophomores and collaborated with security for the Northeast's largest sports fest.
     * Managed the footfall of around 50k+ with proper planning of Control Environment.
-    * Aug. 2023 - Dec. 2023
-* **Core Team Member, Consulting & Analytics Club, IIT Guwahati**
+    * *Aug. 2023 - Dec. 2023*
+
+* Core Team Member, Consulting & Analytics Club, IIT Guwahati
     * Collaborated as a web developer in the Consulting and Analytics Club, working with teams to deliver web solutions.
-    * Apr. 2023 - Mar. 2023
+    * *Apr. 2023 - Mar. 2023*
 
 **EXTRACURRICULARS**
 
 * SMC Kameng Hostel 2024-2025. Optimizing service delivery for 500+ students and contributing to menu planning decisions.
 * Placement volunteers 2023-2024, Managed the process for 1200+ students | coordinated with 100+ companies.
 * Technothlon 2022, Pitched Technothlon exam to 300+ students, securing 200+ registrations.
-* Organising team member. Organized and coordinated key activities for the 25th Convocation of IIT Guwahati.  Jul. 2023
+* Organising team member. Organized and coordinated key activities for the 25th Convocation of IIT Guwahati. *Jul. 2023*
 
