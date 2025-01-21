@@ -82,15 +82,7 @@ def main():
         st.sidebar.warning("Please upload a context file to start.")
         return
 
-    # # Chat History
-    # st.write("### Chat History")
-    # for msg in st.session_state["messages"]:
-    #     if msg["role"] == "user":
-    #         message(msg["content"], is_user=True, key=f"user_{msg['id']}")
-    #     else:
-    #         message(msg["content"], is_user=False, key=f"bot_{msg['id']}")
-
-    # User Input
+   
     st.write("---")
     user_input = st.text_input("Type your message here:", key="input")
     if st.button("Send", key="send"):

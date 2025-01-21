@@ -88,72 +88,18 @@ def create_resume_analyzer():
 
     return prompt | llm | parser
 
-# def get_chatbot_response(context, user_query):
-#     """Get response from chatbot"""
-#     client = Groq()
-#     messages = [
-#         {
-#             "role": "system",
-#             "content": "You are a helpful assistant that answers questions based on the provided context. Only answer questions using information from the context. If the information is not in the context, say so."
-#         },
-#         {
-#             "role": "user",
-#             "content": f"Context: {context}\n\nQuestion: {user_query}"
-#         }
-#     ]
 
-#     response = client.chat.completions.create(
-#         #api_key=os.getenv('GROQ_API_KEY'),
-#         model="llama-3.3-70b-versatile",
-#         messages=messages,
-#         temperature=0.5,
-#         max_tokens=1024,
-#         top_p=1,
-#         stream=False
-#     )
-#     return response.choices[0].message.content
-
-def get_chatbot_response(context, user_query):
-    # """Get response from chatbot using the persistent client"""
-    messages = [
-        {
-            "role": "system",
-            "content": (
-                "You are a helpful assistant that answers questions based on the "
-                "provided context. Only answer questions using information from "
-                "the context. If the information is not in the context, say so."
-            )
-        },
-        {
-            "role": "user",
-            "content": f"Context: {context}\n\nQuestion: {user_query}"
-        }
-    ]
-
-    try:
-        response = st.session_state.groq_client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
-            messages=messages,
-            temperature=0.5,
-            max_tokens=1024,
-            top_p=1,
-            stream=False
-        )
-        return response.choices[0].message.content
-    except Exception as e:
-        return f"Error generating response: {e}"
-
-# Streamlit UI
-st.set_page_config(page_title="Resume Analyzer & Chatbot", layout="wide")
-st.title("Resume Analyzer & Chatbot")
 
 # Initialize session state
 if 'extracted_text' not in st.session_state:
     st.session_state.extracted_text = None
 if 'analysis_results' not in st.session_state:
     st.session_state.analysis_results = None
-if 'chat_history' not in st.session_state:
-    st.session_state.chat_history = []
+# if 'chat_history' not in st.session_state:
+#     st.session_state.chat_history = []
+if "messages" not in st.session_state:
+    st.session_state["messages"] = []
+
 
 # File upload
 uploaded_file = st.file_uploader("Upload PDF Resume", type=['pdf'])
@@ -238,100 +184,3 @@ if st.session_state.analysis_results:
     with col8:
         st.write("✅" if st.session_state.analysis_results["has_2_years_experience"] == "yes" else "❌")
 
-# #Chat interface
-# if st.session_state.extracted_text:
-#     st.header("Chat with Resume")
-#     user_question = st.text_input("Ask a question about the resume:")
-    
-#     if st.button("Send"):
-#         with st.spinner("Generating response..."):
-#             response = get_chatbot_response(st.session_state.extracted_text, user_question)
-#             st.session_state.chat_history.append(("You", user_question))
-#             st.session_state.chat_history.append(("Bot", response))
-
-#     # Display chat history
-#     for role, message in st.session_state.chat_history:
-#         if role == "You":
-#             st.write(f"**You:** {message}")
-#         else:
-#             st.write(f"**Bot:** {message}")
-
-# [Previous imports and functions remain the same]
-
-# # Enhanced Chat Interface
-# if st.session_state.extracted_text:
-#     st.header("Chat with Resume")
-    
-#     # Initialize chat history if not exists
-#     if 'chat_history' not in st.session_state:
-#         st.session_state.chat_history = []
-    
-#     # Function to clear input
-#     def clear_input():
-#         st.session_state['user_input'] = ''
-    
-#     # Chat input area at the bottom
-#     with st.container():
-#         # Create a container for chat history that scrolls
-#         chat_container = st.container()
-        
-#         # Add some spacing
-#         st.markdown("<br>" * 2, unsafe_allow_html=True)
-        
-#         # Input area with send button side by side
-#         col1, col2 = st.columns([6, 1])
-#         with col1:
-#             user_question = st.text_input(
-#                 "", 
-#                 placeholder="Ask a question about the resume...", 
-#                 key="user_input",
-#                 on_change=clear_input if st.session_state.get('clear_input', False) else None
-#             )
-#         with col2:
-#             send_button = st.button("Send")
-
-#         # Handle sending message
-#         if send_button and user_question:
-#             # Add user message to history
-#             st.session_state.chat_history.append(("user", user_question))
-            
-#             # Get and add bot response
-#             with st.spinner("Thinking..."):
-#                 response = get_chatbot_response(st.session_state.extracted_text, user_question)
-#                 st.session_state.chat_history.append(("assistant", response))
-            
-#             # Set flag to clear input on next rerun
-#             st.session_state.clear_input = True
-            
-#             # Rerun to update UI
-#             st.experimental_rerun()
-#         else:
-#             # Reset clear input flag
-#             st.session_state.clear_input = False
-
-#         # Display chat history in the container
-#         with chat_container:
-#             for role, message in st.session_state.chat_history:
-#                 if role == "user":
-#                     st.markdown(
-#                         f"""
-#                         <div style='background-color: #e6f3ff; padding: 10px; border-radius: 10px; margin: 5px 0; text-align: right;'>
-#                             <b>You:</b> {message}
-#                         </div>
-#                         """, 
-#                         unsafe_allow_html=True
-#                     )
-#                 else:
-#                     st.markdown(
-#                         f"""
-#                         <div style='background-color: #f0f0f0; padding: 10px; border-radius: 10px; margin: 5px 0;'>
-#                             <b>Assistant:</b> {message}
-#                         </div>
-#                         """, 
-#                         unsafe_allow_html=True
-#                     )
-
-#         # Add a clear chat button
-#         if st.button("Clear Chat"):
-#             st.session_state.chat_history = []
-#             st.experimental_rerun()
